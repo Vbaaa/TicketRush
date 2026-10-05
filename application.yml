@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ticketrush
+    username: ticketrush
+    password: ticketrush
+  jpa:
+    hibernate:
+      ddl-auto: validate      # Hibernate only checks, Flyway owns the schema
+    open-in-view: false
+app:
+  jwt:
+    secret: ${JWT_SECRET}      # never hardcode
+    expiry-ms: 3600000
