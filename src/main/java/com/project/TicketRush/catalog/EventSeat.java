@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import jakarta.persistence.Table;
 import lombok.NoArgsConstructor;
 import lombok.*;
-import org.springframework.data.annotation.Id;
+
 
 import java.math.BigDecimal;
 import java.time.Instant;

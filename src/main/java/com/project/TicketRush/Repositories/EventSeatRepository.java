@@ -12,11 +12,11 @@ public interface EventSeatRepository extends JpaRepository<EventSeat, Long> {
     boolean existsByEventId(Long eventId);
 
     @Query("""
-        select new com.ticketrush.catalog.dto.SeatAvailabilityResponse(
-            es.id, s.section, s.rowLabel, s.seatNumber, es.price, es.status)
-        from EventSeat es join Seat s on s.id = es.seatId
-        where es.eventId = :eventId
-        order by s.section, s.rowLabel, s.seatNumber
-        """)
+            select new com.project.TicketRush.catalog.dto.SeatAvailabilityResponse(
+                es.id, s.section, s.rowLabel, s.seatNumber, es.price, es.status)
+            from EventSeat es join Seat s on s.id = es.seatId
+            where es.eventId = :eventId
+            order by s.section, s.rowLabel, s.seatNumber
+            """)
     List<SeatAvailabilityResponse> findAvailability(@Param("eventId") Long eventId);
 }
