@@ -14,6 +14,11 @@ app:
   jwt:
     secret: ${JWT_SECRET}
     expiry-minutes: 60
+  booking:
+    strategy: naive            # we will switch this to optimistic on Day 4
+    hold-minutes: 5
+    simulated-latency-ms: 0    # tests widen the race window with this
+    expiry-scan-ms: 10000
 
 management:
   endpoints:
