@@ -50,5 +50,8 @@ public class EventService {
         return eventSeats.findAvailability(eventId);
     }
 
+    public void publish(Long id, Long id1, boolean b) {
+    }
+
     // publish() is added on Day 5
 }
